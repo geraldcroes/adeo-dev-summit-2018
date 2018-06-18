@@ -1,7 +1,7 @@
 // Import React
 import React from "react";
 // Import Spectacle Core tags
-import {Appear, Code, Deck, Heading, Image, Link, List, ListItem, Slide, Spectacle, Text} from "spectacle";
+import {Appear, Code, Deck, Heading, Image, Link, List, ListItem, Slide, Spectacle, Text, Notes} from "spectacle";
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 // Import theme
@@ -179,37 +179,145 @@ export default class Presentation extends React.Component {
                 </Slide>
 
                 <Slide>
-                    <Heading>Installation</Heading>
+                    <Notes>
+                    <ol>
+                      <li>
+                      We had an existing docker-compose file with 1 front service and 2 api services
+                      </li>
+                    </ol>
+                    </Notes>
+                    <Heading>Use case</Heading>
                 </Slide>
 
                 <Slide>
+                <Notes>
+                <ol>
+                  <li>
+                  We start Traefik with new docker-compose file (with config toml file)
+                  </li>
+                  <li>
+                  And everythings works (debug bar, call to the exposed services)
+                  </li>
+                </ol>
+                </Notes>
                     <Heading>Connecting Services</Heading>
                 </Slide>
 
                 <Slide>
+                <Notes>
+                <ol>
+                  <li>
+                  Modify with [api]dashboard=true
+                  </li>
+                  <li>
+                  Show dashboard
+                  </li>
+                </ol>
+                </Notes>
                     <Heading>You told Me I'd Knew Where Was Charlie</Heading>
                 </Slide>
 
                 <Slide>
+                <Notes>
+                <ol>
+                  <li>
+                  Gerald: The phone rings, I need to answer, this is the security guy!
+                  </li>
+                  <li>
+                  Gerald: You want it in HTTPS? Oh my god, Julien, can you help me?
+                  </li>
+                  <li>
+                    Julien: Do you already have a certificate?
+                  </li>
+                  <li>
+                    Gerald: Arf no!
+                  </li>
+                  <li>
+                    Julien: No problem, we will use Let's encrypt
+                  </li>
+                  <li>
+                    Add LE in configuration (redirect), restart, and everythings works in https
+                  </li>
+                </ol>
+                </Notes>
                     <Heading>Let's Make It Secure</Heading>
                 </Slide>
 
                 <Slide>
-                    <Heading>Installation</Heading>
+                <Notes>
+                <ol>
+                  <li>
+                  Gerald: I have a new service, we will need to restart everything :(
+                  </li>
+                  <li>
+                  Julien: No problem, with a new Hostname? No problem
+                  </li>
+                  </ol>
+                  </Notes>
+                    <Heading>New services</Heading>
                 </Slide>
-
                 <Slide>
+                <Notes>
+                <ol>
+                  <li>
+                  Gerald: This service is really (gourmand), can we deploy two instances and load balance?
+                  </li>
+                  <li>
+                  Julien: It will be complicated, give me one or two weeks: docker-compose --scale=2
+                  </li>
+                  </ol>
+                  </Notes>
                     <Heading>Can We Scale?</Heading>
                 </Slide>
-
                 <Slide>
-                    <Heading>Installation</Heading>
+                <Notes>
+                <ol>
+                  <li>
+                  Gerald: We have a problem, our sessions is in the container :grin: :vomit:
+                  </li>
+                  <li>
+                  Julien: I can had sticky!
+                  </li>
+                  </ol>
+                  </Notes>
+                    <Heading>Session Bug?</Heading>
                 </Slide>
-
                 <Slide>
+                  <Notes>
+                  Sometimes it fails, you can healthcheck on /health
+                  </Notes>
+                    <Heading>Healthcheck</Heading>
+                </Slide>
+                <Slide>
+                    <Notes>
+                      BI is calling? Can we have some stats?
+                      No problem with what? Stats? Datadog? InfluxDB? we are using Prometheus!
+                      That's ok, I can handle that!
+                    </Notes>
                     <Heading>Can I See What's Going On?</Heading>
                 </Slide>
-
+                <Slide>
+                    <Notes>
+                      Waouh lots of traffic!
+                      Can we see accesslogs? in json?
+                    </Notes>
+                    <Heading>Access logs</Heading>
+                </Slide>
+                <Slide>
+                    <Notes>
+                      Oups, security guy again, https is still working?
+                      Allo? I need to redact some fields? Euh?? (Julien fait oui de la tete)
+                    </Notes>
+                    <Heading>PRGD</Heading>
+                </Slide>
+                <Slide>
+                <Notes>
+                We think about deploying our services in Kubernetes?
+                No problem, we only have to change the configuration with [kubernetes] and deploy Traefik as an ingress controller.
+                That's all!!
+                </Notes>
+                  <Heading>Kubernetes project</Heading>
+                </Slide>
                 <Slide>
                     <Heading>Part 4 -- Before We Leave</Heading>
 
