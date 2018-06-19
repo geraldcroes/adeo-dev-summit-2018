@@ -103,6 +103,15 @@ export default class Presentation extends React.Component {
                     <Image src={images.asterix.replace("/", "")} margin="0px auto 20px" fit height="300"/>
                 </Slide>
 
+                <Slide>
+                    <Image src={images.need_help.replace("/", "")} margin="0px auto 20px" fit height="400"/>
+                </Slide>
+
+                <Slide>
+                    <Heading>Where is the service?</Heading>
+                    <Image src={images.charlie.replace("/", "")} margin="0px auto 20px" fit height="400"/>
+                </Slide>
+
                 <Slide bgColor="white">
                     <Heading textColor={"primary"}>Tools of the Trade</Heading>
                     <Image src={images.provider_docker.replace("/", "")} margin="0px auto 20px" fit height="100"/>
@@ -130,29 +139,11 @@ export default class Presentation extends React.Component {
                 </Slide>
 
                 <Slide>
-                    <Heading>Where is the service?</Heading>
-                    <Image src={images.charlie.replace("/", "")} margin="0px auto 20px" fit height="400"/>
-                </Slide>
-
-                <Slide bgColor={"white"}>
-                    <Heading textColor={"primary"}>Routes to your Services</Heading>
-                    <Image src={images.reverse_proxy.replace("/", "")} margin="0px auto 20px" fit height="400"/>
-                </Slide>
-
-                <Slide>
-                    <Heading>The Configuration File to Make it Happen</Heading>
-                    <Image src={images.reverse_proxy.replace("/", "")} margin="0px auto 20px" fit height="400"/>
-                </Slide>
-
-                <Slide>
                     <Heading>What If I Told You</Heading>
                     <Image src={images.matrix_if_i_told_you.replace("/", "")} margin="0px auto 20px" fit height="400"/>
                     <Text>That You Don't Have to Write This Configuration File...?</Text>
                 </Slide>
 
-                <Slide>
-                    <Image src={images.need_help.replace("/", "")} margin="0px auto 20px" fit height="400"/>
-                </Slide>
 
                 <Slide bgColor={"white"}>
                     <Heading textColor={"primary"}>Here Comes Traefik!</Heading>
