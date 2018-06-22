@@ -9,8 +9,8 @@ services:
     build: ./api
 #   labels:
 #       - traefik.backend.loadbalancer.stickiness=true
-# websocket:
-#   build: ./websocket
+  websocket:
+    build: ./websocket
 #   labels:
 #       - traefik.backend.loadbalancer.stickiness=true
 networks:

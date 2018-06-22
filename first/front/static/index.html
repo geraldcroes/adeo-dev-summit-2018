@@ -81,6 +81,15 @@
                     console.debug(data)
                     $("#ip").html(data)
                 })
+                var socket = new WebSocket("ws://websocket.first.containous.demo.com");
+
+                socket.onopen = function(){
+                    alert("Socket has been opened!");
+                }
+
+                socket.onmessage = function(msg){
+                    alert(msg);	//Awesome!
+                }
             });
         </script>
     </body>

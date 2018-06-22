@@ -5,7 +5,6 @@ services:
     image: traefik:1.6.4 # The official Traefik docker image
     ports:
       - "80:80"     # The HTTP port
-      - "5002:80"     # The HTTP port
       - "443:443"   # The HTTPS port
       - "8080:8080" # The Web UI (enabled by --api)
     volumes:
@@ -13,6 +12,20 @@ services:
       - ./traefik.toml:/traefik.toml
       - ./acme.json:/acme.json
       - ./access.log:/tmp/access.log
+
+  www:
+   build: ./front
+   volumes:
+    - "./front/static:/static"
+   labels:
+       - "traefik.frontend.rule=Host:better.demo"
+#       - traefik.frontend.auth.basic=user:$$apr1$$9Cv/OMGj$$ZomWQzuQbL.3TRCS81A1g/
+
+  api:
+    build: ./api
+    labels:
+       - "traefik.frontend.rule=Host:better.demo;PathPrefix:/api"
+#      - traefik.backend.loadbalancer.stickiness=true
 networks:
   default:
     external:
