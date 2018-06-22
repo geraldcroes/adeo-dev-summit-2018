@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  www:
+    build: ./front
+#   labels:
+#       - traefik.frontend.auth.basic=user:$$apr1$$9Cv/OMGj$$ZomWQzuQbL.3TRCS81A1g/
+  api1:
+    build: ./api1
+   labels:
+       - traefik.backend.loadbalancer.stickiness=true
