@@ -7,8 +7,8 @@ docker rm -f $(docker ps -aq)
 
 
 echo "" > ./traefik/access.log
-echo "" > ./traefik/acme.json
-chmod 600 ./traefik/acme.json
+rm -rf acme
+mkdir acme
 
 cd ./env-demo/
 ./manage_acme_docker_environment.sh --dev

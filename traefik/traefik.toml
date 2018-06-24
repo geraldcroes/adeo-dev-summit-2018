@@ -52,9 +52,8 @@ domain="containous-demo.com"
 
 [acme]
 email = "test@containous.demo"
-storage = "/acme.json"
+storage = "/acme/acme.json"
 entryPoint = "https"
-onDemand = false
 OnHostRule = true
 caServer = "http://172.17.0.1:4001/directory"
 [acme.httpChallenge]
