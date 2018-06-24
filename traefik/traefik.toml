@@ -1,5 +1,4 @@
 defaultEntrypoints = [ "http", "https" ]
-#debug=true
 
 [api]
 
@@ -14,6 +13,40 @@ domain="containous-demo.com"
   [entryPoints.https]
   address = ":443"
   [entryPoints.https.tls]
+  [[entryPoints.https.tls.certificates]]
+  certFile = ""
+  keyFile = ""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -26,6 +59,7 @@ OnHostRule = true
 caServer = "http://172.17.0.1:4001/directory"
 [acme.httpChallenge]
 entryPoint="http"
+
 
 
 
