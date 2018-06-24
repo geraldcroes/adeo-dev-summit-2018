@@ -17,7 +17,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <span id="quantity" >0</span> article(s) in the cart
+                        <span id="quantity" >.</span> article(s) in the cart
+                    </li>
+                    <li class="nav-item active">
+                        Deploy on <span id="server" >.</span>
                     </li>
                 </ul>
             </div>
@@ -26,6 +29,7 @@
             <div class="row" id="market">
             </div>
         </div>
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -45,6 +49,10 @@
                     $("#market").html(html)
                     $.get("/api/get", function (data) {
                         $("#quantity").html(data)
+                    })
+
+                    $.get("/api/server", function (data) {
+                        $("#server").html(data)
                     })
 
                     $(".cart").click(function(evt) {

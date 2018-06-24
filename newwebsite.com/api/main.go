@@ -7,6 +7,7 @@ import (
 	"io"
 	"crypto/rand"
 	"encoding/base64"
+	"os"
 )
 
 var sessions = make(map[string]int)
@@ -20,6 +21,9 @@ func SessionId() string {
 }
 
 func main() {
+	http.HandleFunc("/api/server",http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
+		rw.Write([]byte(os.Getenv("HOSTNAME")))
+	}))
 	http.HandleFunc("/api/add",http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		sessionCookie, err := req.Cookie("MY_SESSION")
 		if err !=nil || sessionCookie.Value == "" {

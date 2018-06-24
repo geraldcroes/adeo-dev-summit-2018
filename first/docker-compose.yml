@@ -3,16 +3,12 @@ version: '3'
 services:
   www:
     build: ./front
-#   labels:
-#       - traefik.frontend.auth.basic=user:$$apr1$$9Cv/OMGj$$ZomWQzuQbL.3TRCS81A1g/
+    volumes:
+     - "./front/static:/static"
   api:
     build: ./api
-#   labels:
-#       - traefik.backend.loadbalancer.stickiness=true
   websocket:
     build: ./websocket
-#   labels:
-#       - traefik.backend.loadbalancer.stickiness=true
 networks:
   default:
     external:

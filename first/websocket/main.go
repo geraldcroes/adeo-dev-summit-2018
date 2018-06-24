@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/websocket"
+	"time"
 )
 
 func main() {
@@ -18,7 +19,12 @@ func main() {
 		if err != nil {
 			fmt.Println(err)
 		}
-		conn.WriteMessage(websocket.TextMessage, []byte("Coucou"))
+
+		timer := time.Tick(time.Second*3)
+
+		for t := range timer {
+			conn.WriteMessage(websocket.TextMessage, []byte(fmt.Sprint(t)))
+		}
 
 	})
 

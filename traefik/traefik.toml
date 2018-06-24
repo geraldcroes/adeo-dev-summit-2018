@@ -1,29 +1,24 @@
 defaultEntrypoints = [ "http", "https" ]
-debug=true
-
-[accesslog]
-filePath = "/tmp/access.log"
-format="json"
-[accessLog.fields.headers]
-    defaultMode = "keep"
-    [accessLog.fields.headers.names]
-      "User-Agent" = "redact"
-      "Authorization" = "drop"
+#debug=true
 
 [api]
+
+[docker]
+domain="containous-demo.com"
 
 [entryPoints]
   [entryPoints.http]
   address = ":80"
+  [entryPoints.http.redirect]
+  entryPoint="https"
   [entryPoints.https]
   address = ":443"
   [entryPoints.https.tls]
 
-[docker]
-domain="containous.demo.com"
+
 
 [acme]
-email = "test@traefik.io"
+email = "test@containous.demo"
 storage = "/acme.json"
 entryPoint = "https"
 onDemand = false
@@ -31,5 +26,62 @@ OnHostRule = true
 caServer = "http://172.17.0.1:4001/directory"
 [acme.httpChallenge]
 entryPoint="http"
-#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [metrics.prometheus]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#[accesslog]
+#filePath = "/tmp/access.log"
+#format="json"
+#[accessLog.fields.headers]
+#    defaultMode = "keep"
+#    [accessLog.fields.headers.names]
+#      "User-Agent" = "redact"
+#      "Authorization" = "drop"
