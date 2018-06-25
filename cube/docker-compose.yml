@@ -7,6 +7,8 @@ services:
     - "./front/static:/static"
    labels:
     - "traefik.frontend.rule=Host:better-demo.com"
+    - traefik.frontend.auth.basic=test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/
+
   api:
    build: ./api
    labels:
