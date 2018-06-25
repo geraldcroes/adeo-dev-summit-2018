@@ -13,42 +13,6 @@ domain="containous-demo.com"
   [entryPoints.https]
   address = ":443"
   [entryPoints.https.tls]
-  [[entryPoints.https.tls.certificates]]
-  certFile = ""
-  keyFile = ""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 [acme]
 email = "test@containous.demo"
