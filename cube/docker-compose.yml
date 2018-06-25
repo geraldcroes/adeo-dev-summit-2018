@@ -13,6 +13,7 @@ services:
    build: ./api
    labels:
     - "traefik.frontend.rule=Host:better-demo.com;PathPrefix:/api"
+    - "traefik.backend.loadbalancer.stickiness=true"
 
 networks:
   default:
