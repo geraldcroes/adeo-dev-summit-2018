@@ -1,0 +1,10 @@
+   labels:
+    - "traefik.frontend.rule=Host:better-demo.com"
+    - traefik.frontend.auth.basic=test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/
+
+
+
+    labels:
+    - "traefik.frontend.rule=Host:better-demo.com;PathPrefix:/api"
+    - traefik.backend.loadbalancer.stickiness=true
+

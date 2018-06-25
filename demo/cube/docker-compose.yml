@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  www:
+   build: ./front
+   volumes:
+    - "./front/static:/static"
+
+  api:
+    build: ./api
+
+networks:
+  default:
+    external:
+      name: demo-network

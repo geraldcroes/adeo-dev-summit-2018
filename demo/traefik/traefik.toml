@@ -1,0 +1,120 @@
+defaultEntrypoints = [ "http", "https" ]
+
+[api]
+
+[docker]
+domain="containous-demo.com"
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.http.redirect]
+  entryPoint="https"
+  [entryPoints.https]
+  address = ":443"
+  [entryPoints.https.tls]
+  [[entryPoints.https.tls.certificates]]
+  certFile = ""
+  keyFile = ""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[acme]
+email = "test@containous.demo"
+storage = "/acme/acme.json"
+entryPoint = "https"
+OnHostRule = true
+caServer = "http://172.17.0.1:4001/directory"
+[acme.httpChallenge]
+entryPoint="http"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[metrics.prometheus]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#[accesslog]
+#filePath = "/tmp/access.log"
+#format="json"
+#[accessLog.fields.headers]
+#    defaultMode = "keep"
+#    [accessLog.fields.headers.names]
+#      "User-Agent" = "redact"
+#      "Authorization" = "drop"
