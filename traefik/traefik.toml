@@ -32,8 +32,8 @@ filePath = "/tmp/access.log"
 format="json"
 
 
-#[accessLog.fields.headers]
-#    defaultMode = "keep"
-#    [accessLog.fields.headers.names]
-#      "User-Agent" = "redact"
-#      "Authorization" = "drop"
+[accessLog.fields.headers]
+    defaultMode = "keep"
+    [accessLog.fields.headers.names]
+      "User-Agent" = "redact"
+      "Authorization" = "drop"
