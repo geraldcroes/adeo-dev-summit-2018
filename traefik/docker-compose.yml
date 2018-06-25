@@ -11,6 +11,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.toml:/traefik.toml
       - ./acme:/acme
+      - ./access.log:/tmp/access.log
 
 networks:
     default:

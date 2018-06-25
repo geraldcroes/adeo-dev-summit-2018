@@ -23,60 +23,15 @@ caServer = "http://172.17.0.1:4001/directory"
 [acme.httpChallenge]
 entryPoint="http"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [metrics.prometheus]
 
 
 
+[accesslog]
+filePath = "/tmp/access.log"
+format="json"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#[accesslog]
-#filePath = "/tmp/access.log"
-#format="json"
 #[accessLog.fields.headers]
 #    defaultMode = "keep"
 #    [accessLog.fields.headers.names]
