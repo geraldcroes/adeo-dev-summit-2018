@@ -5,9 +5,12 @@ services:
    build: ./front
    volumes:
     - "./front/static:/static"
-
+   labels:
+    - "traefik.frontend.rule=Host:better-demo.com"
   api:
-    build: ./api
+   build: ./api
+   labels:
+    - "traefik.frontend.rule=Host:better-demo.com;PathPrefix:/api"
 
 networks:
   default:
