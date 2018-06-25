@@ -3,7 +3,7 @@ defaultEntrypoints = [ "http", "https" ]
 [api]
 
 [docker]
-domain="containous-demo.com"
+domain="store.com"
 
 [entryPoints]
   [entryPoints.http]
