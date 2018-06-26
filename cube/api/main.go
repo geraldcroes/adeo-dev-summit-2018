@@ -20,6 +20,12 @@ func SessionId() string {
 	return base64.URLEncoding.EncodeToString(b)
 }
 
+type Article struct {
+	Name string
+	Image string
+	Description string
+}
+
 func main() {
 	http.HandleFunc("/api/server",http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		rw.Write([]byte(os.Getenv("HOSTNAME")))
@@ -60,7 +66,29 @@ func main() {
 	}))
 
 	http.HandleFunc("/api/articles",http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
-		articles := []string{ "Cube 2x2 Moyu", "Gan 360 UM 3x3", "Moyu GTS 2M 3x3", "Moyu AoSu 4x4"}
+		articles := []Article{
+			Article{
+				"Cube 2x2 Moyu",
+				"2-2-moyu.jpg",
+				"Start your journey into cube with a seemingly simple cube",
+		    },
+		    Article {
+			     "Gan 360 UM 3x3",
+			     "360-um-gan.jpg",
+				 "If you think you deserve the best cube, then this is your cube of choice",
+			},
+			Article{
+				"Moyu GTS 2M 3x3",
+				"3-3-gts-moyu.jpg",
+				"One of the greatest option for cubers on a budget that want the best",
+			},
+			Article {
+				"Moyu AoSu 4x4",
+				"4-4-aosu.jpg",
+				"Ready to tackle bigger cube? This is your first stop.",
+			},
+		}
+
 		//encoder := json.NewEncoder(rw)
 		//encoder.Encode(articles)
 		json, err := json.Marshal(articles)
