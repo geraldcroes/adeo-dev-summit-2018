@@ -566,9 +566,19 @@ func randomMessage() []byte {
 	}
 
 	messages := [...]string{
-		"Hello!",
-		"Wazzaaaaaa!!!",
-		"WDYT?",
+		"Chuck Norris knows Victoria's secret.",
+		"When Chuck Norris crosses the street, the cars have to look both ways.",
+		"Chuck Norris' calendar goes straight from March 31st to April 2nd. No one fools Chuck Norris.",
+		"Chuck Norris makes onions cry.",
+		"When Chuck Norris enters a room, he doesn't turn the lights on, he turns the dark off.",
+		"Chuck Norris counted to infinity. Twice.",
+		"Chuck Norris can hear sign language.",
+		"Chuck Norris beat the sun in a staring contest.",
+		"When a zombie apocalypse starts, Chuck Norris doesn't try to survive. The zombies do.",
+		"Chuck Norris can draw a square with only 3 lines.",
+		"Chuck Norris doesn't dial the wrong number, you pick up the wrong phone.",
+		"Chuck can divide by zero.",
+		"Chuck Norris appears in all star wars movies. He is the Force.",
 	}
 
 	message := fmt.Sprintf("<span class=\"name\">%s:</span> %s", names[rand.Intn(len(names))], messages[rand.Intn(len(messages))])
