@@ -28,7 +28,9 @@ func main() {
 				if err != nil {
 					return
 				}
-				conn.WriteMessage(websocket.TextMessage, []byte("You: "+string(content)))
+				message := fmt.Sprintf("<span class=\"name\">%s:</span> %s", "You", string(content))
+
+				conn.WriteMessage(websocket.TextMessage, []byte(message))
 			}
 		}()
 

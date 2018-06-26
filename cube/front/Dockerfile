@@ -13,5 +13,6 @@ RUN CGO_ENABLED=0 GOOS=linux vgo build -a -installsuffix cgo -o main .
 FROM ubuntu
 
 EXPOSE 80
+COPY ./static /static
 COPY --from=build  /go/src/github.com/juliens/demo/main /
 CMD [ "/main" ]

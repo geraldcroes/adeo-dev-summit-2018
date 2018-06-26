@@ -1,8 +1,6 @@
 package main // import "github.com/juliens/demo"
 
-import (
-	"net/http"
-)
+import "net/http"
 
 func main() {
 	http.ListenAndServe(":80", http.FileServer(http.Dir("/static")))
