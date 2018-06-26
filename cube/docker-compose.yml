@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    www:
+  www:
    build: ./front
    volumes:
     - "./front/static:/static"
